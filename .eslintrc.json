@@ -1,0 +1,32 @@
+{
+  // TODO: wait when airbnb will support latest version of eslint
+  "extends": [
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "prettier/@typescript-eslint"
+  ],
+  "env": {
+    "es6": true,
+    "node": true,
+    "es2017": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "tsconfig.json",
+    "tsconfigRootDir": "."
+  },
+  "plugins": ["@typescript-eslint", "prettier", "import"],
+  "rules": {
+    "prettier/prettier": "error",
+    "import/prefer-default-export": "off",
+    "class-methods-use-this": "off",
+    "quotes": ["error", "single", {
+      "allowTemplateLiterals": true
+    }],
+    "no-extra-parens": ["error", "all", {
+      "enforceForArrowConditionals": false
+    }]
+  }
+}
