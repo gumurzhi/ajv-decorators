@@ -9,6 +9,8 @@ export class Validator extends Ajv {
 
   private buildSchemas() {
     const schemaObj = buildSchemas();
-    console.log(schemaObj);
+    Object.keys(schemaObj).forEach(schema =>
+      this.addSchema(schemaObj[schema], schema),
+    );
   }
 }

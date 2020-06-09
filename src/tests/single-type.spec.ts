@@ -9,7 +9,15 @@ describe('most primitive cases should be tested here', () => {
       @IsOptional()
       name: string;
     }
+    const n = {
+      field: 'eue@eueueu.com',
+    };
     const z = new Validator();
-    console.log(`euee`);
+    const valid = z.validate('Test', n);
+    if (!valid) {
+      console.log(z.errorsText());
+      throw new Error(z.errorsText());
+    }
+    console.log(`it's good`);
   });
 });

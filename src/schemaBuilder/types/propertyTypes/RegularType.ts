@@ -1,3 +1,5 @@
 export class RegularType {
-  type: string;
+  type: string | string[];
+
+  format?: string;
 }

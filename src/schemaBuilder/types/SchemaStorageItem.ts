@@ -1,9 +1,7 @@
-import { RegularType } from './propertyTypes/RegularType';
-import { EnumType } from './propertyTypes/EnumType';
-import { ReferenceType } from './propertyTypes/ReferenceType';
+import { PropertyType } from '@/schemaBuilder/types/PropertyType';
 
 export class SchemaStorageItem {
   propertyName: string;
 
-  property: RegularType | EnumType | ReferenceType;
+  property: PropertyType;
 }

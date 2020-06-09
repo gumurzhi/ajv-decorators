@@ -1,3 +1,4 @@
+import { ConstType } from '@/schemaBuilder/types/propertyTypes/ConstType';
 import { RegularType } from './types/propertyTypes/RegularType';
 import { EnumType } from './types/propertyTypes/EnumType';
 import { ReferenceType } from './types/propertyTypes/ReferenceType';
@@ -10,7 +11,7 @@ export const propertyStorage: {
 export const addProperty = (
   className: string,
   keyName: string,
-  ajvProperty: RegularType | EnumType | ReferenceType,
+  ajvProperty: RegularType | EnumType | ReferenceType | ConstType,
 ): void => {
   if (!propertyStorage[className]) {
     propertyStorage[className] = [
