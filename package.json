@@ -48,7 +48,12 @@
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
     },
-    "coverageDirectory": "../coverage",
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/$1"
+    },
     "testEnvironment": "node"
   }
 }

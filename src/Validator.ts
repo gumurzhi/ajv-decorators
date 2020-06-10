@@ -13,4 +13,12 @@ export class Validator extends Ajv {
       this.addSchema(schemaObj[schema], schema),
     );
   }
+
+  public validate(schemaKeyRef: object | string | boolean, data: any): boolean {
+    const valid = super.validate(schemaKeyRef, data);
+    if (!valid) {
+      throw new Error(this.errorsText());
+    }
+    return true;
+  }
 }

@@ -1,11 +1,17 @@
 import { PropertyItem } from '@/schemaBuilder/types/PropertyItem';
+import { IfType } from '@/schemaBuilder/types/IfType';
+import { ThenType } from '@/schemaBuilder/types/ThenType';
 
 export class AjvSchema {
-  '$id': string;
+  public '$id': string;
 
-  'type': 'object';
+  public 'type': 'object';
 
-  'properties': PropertyItem;
+  public 'properties': PropertyItem;
 
-  'required'?: string[];
+  public 'required'?: string[];
+
+  public 'if'?: IfType;
+
+  public 'then'?: ThenType;
 }

@@ -6,8 +6,11 @@ const testSchema = {
   $id: `#/definitions/Test`,
   type: 'object',
   properties: {
+    a: { type: 'string' },
     field: { oneOf: [{ type: 'number' }, { type: 'string', format: 'email' }] },
   },
+  if: { properties: { a: { enum: ['hey'] } } },
+  then: { properties: { b: { type: 'number' } }, required: ['b'] },
 };
 
 export const buildSchemas = (): { [className: string]: AjvSchema } => {
