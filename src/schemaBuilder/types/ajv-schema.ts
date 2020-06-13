@@ -1,6 +1,6 @@
-import { PropertyItem } from '@/schemaBuilder/types/PropertyItem';
-import { IfType } from '@/schemaBuilder/types/IfType';
-import { ThenType } from '@/schemaBuilder/types/ThenType';
+import { PropertyItem } from '@/schemaBuilder/types/property-item';
+import { IfType } from '@/schemaBuilder/types/if-type';
+import { ThenType } from '@/schemaBuilder/types/then-type';
 
 export class AjvSchema {
   public '$id': string;

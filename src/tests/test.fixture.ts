@@ -1,4 +1,4 @@
-import { AjvSchema } from '../schemaBuilder/types/AjvSchema';
+import { AjvSchema } from '../schemaBuilder/types/ajv-schema';
 
 const ExampleEntity: AjvSchema = {
   properties: {

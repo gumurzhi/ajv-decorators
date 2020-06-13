@@ -1,8 +1,8 @@
-import { ConstType } from '@/schemaBuilder/types/propertyTypes/ConstType';
-import { RegularType } from './types/propertyTypes/RegularType';
-import { EnumType } from './types/propertyTypes/EnumType';
-import { ReferenceType } from './types/propertyTypes/ReferenceType';
-import { SchemaStorageItem } from './types/SchemaStorageItem';
+import { ConstType } from '@/schemaBuilder/types/property-types/const-type';
+import { RegularType } from './types/property-types/regular-type';
+import { EnumType } from './types/property-types/enum-type';
+import { ReferenceType } from './types/property-types/reference-type';
+import { SchemaStorageItem } from './types/schema-storage-item';
 
 export const propertyStorage: {
   [className: string]: SchemaStorageItem[];

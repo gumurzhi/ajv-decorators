@@ -1,4 +1,4 @@
-import { addProperty } from '@/schemaBuilder/propertyStorage';
+import { addProperty } from '@/schemaBuilder/property-storage';
 
 export function IsString() {
   return function(target: any, key: string) {

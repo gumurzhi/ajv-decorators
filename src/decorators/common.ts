@@ -1,5 +1,5 @@
-import { addProperty } from '@/schemaBuilder/propertyStorage';
-import { addOptional } from '@/schemaBuilder/optionalStorage';
+import { addProperty } from '@/schemaBuilder/property-storage';
+import { addOptional } from '@/schemaBuilder/optional-storage';
 
 export function Equals(constValue: string | number) {
   return function(target: any, key: string) {

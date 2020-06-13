@@ -1,6 +1,6 @@
-import { AjvSchema } from './types/AjvSchema';
-import { propertyStorage } from './propertyStorage';
-import { optionalPropertyStorage } from './optionalStorage';
+import { AjvSchema } from './types/ajv-schema';
+import { propertyStorage } from './property-storage';
+import { optionalPropertyStorage } from './optional-storage';
 
 const testSchema = {
   $id: `#/definitions/Test`,

@@ -1,4 +1,4 @@
-import { PropertyType } from '@/schemaBuilder/types/PropertyType';
+import { PropertyType } from '@/schemaBuilder/types/property-type';
 
 export class SchemaStorageItem {
   propertyName: string;
