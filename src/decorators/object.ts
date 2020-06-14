@@ -1,7 +1,11 @@
-import { addProperty } from '@/schemaBuilder/property-storage';
+import { Newable } from '@/schemaBuilder/types/common';
+import { schemaBuilder } from '@/schemaBuilder/schema-builder';
 
-export function IsNumber() {
-  return function(target: any, key: string) {
-    addProperty(target.constructor.name, key, { type: 'number' });
+export function Type(fnOrClass: () => Newable | Newable): (arget: any, key: string) => void {
+  const className = fnOrClass.name || fnOrClass().name;
+  return function(target: any, key: string): void {
+    schemaBuilder.pushProperty(target.constructor.name, key, {
+      $ref: className,
+    });
   };
 }

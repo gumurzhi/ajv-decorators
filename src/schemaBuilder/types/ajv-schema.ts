@@ -14,4 +14,6 @@ export class AjvSchema {
   public 'if'?: IfType;
 
   public 'then'?: ThenType;
+
+  public 'allOf'?: { if: IfType; then: ThenType }[];
 }

@@ -1,7 +1,9 @@
-import { addProperty } from '@/schemaBuilder/property-storage';
+import { schemaBuilder } from '@/schemaBuilder/schema-builder';
 
 export function IsNumber() {
   return function(target: any, key: string) {
-    addProperty(target.constructor.name, key, { type: 'number' });
+    schemaBuilder.pushProperty(target.constructor.name, key, {
+      type: 'number',
+    });
   };
 }
