@@ -9,3 +9,11 @@ export function Type(fnOrClass: () => Newable | Newable): (arget: any, key: stri
     });
   };
 }
+
+export function IsNull() {
+  return function(target: any, key: string) {
+    schemaBuilder.pushProperty(target.constructor.name, key, {
+      type: 'null',
+    });
+  };
+}

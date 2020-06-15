@@ -1,7 +1,4 @@
 import { schemaBuilder } from '@/schemaBuilder/schema-builder';
-import { IfType } from '@/schemaBuilder/types/if-type';
-import { ThenType } from '@/schemaBuilder/types/then-type';
-import { PropertyItem } from '@/schemaBuilder/types/property-item';
 import { PropertyType } from '@/schemaBuilder/types/property-type';
 
 export function Equals(constValue: string | number) {

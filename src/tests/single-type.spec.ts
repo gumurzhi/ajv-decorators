@@ -1,7 +1,11 @@
+/* eslint max-classes-per-file: ["error", 10] */
 import { Validator } from '@/Validator';
 import { IsNumber } from '@/decorators/number';
+import { IsArray } from '@/decorators/array';
+import { IsNull } from '@/decorators/object';
 import { IsOptional, IsString, ValidateIf } from '../decorators';
 
+type Tt = string[];
 describe('place to validate real cases', () => {
   let validator: Validator;
   beforeEach(() => {
@@ -42,36 +46,22 @@ describe('place to validate real cases', () => {
       expect(valid).toBeUndefined();
     });
   });
+  describe('IsArray test cases', () => {
+    class TestArr {
+      @IsString()
+      @IsNumber()
+      name: string;
+
+      @IsArray(String, Number)
+      shops: string;
+    }
+    it('h', () => {
+      const z = {
+        name: 'name',
+        shops: false,
+      };
+      const valid = validator.validate(TestArr, z);
+      expect(valid).toBe(true);
+    });
+  });
 });
-// describe('most primitive cases should be tested here', () => {
-//   it('isString test', () => {
-//     class A {
-//       @IsString()
-//       @IsOptional()
-//       name: string;
-//
-//       @Type(() => A)
-//       @IsString()
-//       @ValidateIf(({ id }) => id !== null)
-//       sraka: Validator;
-//     }
-//     const n = {
-//       field: 'eue@eueueu.com',
-//     };
-//
-//     const valid = validator.validate('A', n);
-//     if (!valid) {
-//       console.log(validator.errorsText());
-//       throw new Error(validator.errorsText());
-//     }
-//     console.log(`it's good`);
-//   });
-//   it('conditional', () => {
-//     const z = {
-//       field: 2,
-//       a: 'hey',
-//     };
-//     const valid = validator.validate('Test', z);
-//     expect(valid).toBe(true);
-//   });
-// });

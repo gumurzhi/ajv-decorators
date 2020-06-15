@@ -9,6 +9,7 @@ import { IfType } from '@/schemaBuilder/types/if-type';
 import { ThenType } from '@/schemaBuilder/types/then-type';
 import { assertEx } from '@/helpers/commonHelper';
 import { AjvSchema } from './types/ajv-schema';
+import { AjvProperty } from '@/schemaBuilder/types/AjvProperty';
 
 const testSchema = {
   $id: `#/definitions/Test`,
@@ -85,7 +86,7 @@ class SchemaBuilder {
     return ajvSch;
   }
 
-  public pushProperty(className: string, keyName: string, ajvProperty: RegularType | EnumType | ReferenceType | ConstType): void {
+  public pushProperty(className: string, keyName: string, ajvProperty: AjvProperty): void {
     if (!this.propertyStorage[className]) {
       this.propertyStorage[className] = {
         [keyName]: [{ property: ajvProperty }],
