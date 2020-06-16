@@ -22,7 +22,7 @@ export class Validator extends Ajv {
     const schemaOrName = typeof schemaKeyRef === 'function' && schemaKeyRef.prototype.constructor ? schemaKeyRef.name : schemaKeyRef;
     const valid = super.validate(schemaOrName, data);
     if (!valid) {
-      throw new Error(this.errorsText());
+      throw new Error(`validation of ${schemaKeyRef} tas failed: ${this.errorsText()}`);
     }
     return true;
   }
