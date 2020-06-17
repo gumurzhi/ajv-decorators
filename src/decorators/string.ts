@@ -6,11 +6,20 @@ export function IsString() {
   };
 }
 
-export function isEmail() {
+export function IsEmail() {
   return function(target: any, key: string) {
     schemaBuilder.pushProperty(target.constructor.name, key, {
       type: 'string',
       format: 'email',
+    });
+  };
+}
+
+export function IsUUID() {
+  return function(target: any, key: string) {
+    schemaBuilder.pushProperty(target.constructor.name, key, {
+      type: 'string',
+      format: 'uuid',
     });
   };
 }

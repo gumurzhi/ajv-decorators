@@ -1,5 +1,4 @@
 export class EnumType {
-  enum: string[];
-
-  type: string;
+  enum: any[];
+  type?: string;
 }

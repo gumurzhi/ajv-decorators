@@ -17,3 +17,9 @@ export function ValidateIf(condition: { [keyName: string]: PropertyType }) {
     schemaBuilder.addIf(target.constructor.name, key, { properties: condition });
   };
 }
+
+export function IsEnum(entity: object) {
+  return function(target: any, key: string) {
+    schemaBuilder.pushProperty(target.constructor.name, key, { enum: Object.keys(entity) });
+  };
+}
